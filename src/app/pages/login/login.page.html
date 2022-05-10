@@ -6,16 +6,16 @@
 </ion-header>
 
 <ion-content>
-  <form>
+  <form [formGroup]="myForm">
     <ion-grid  class="set-grid">
       <ion-row>
         <ion-col class="ion-text-center">
-          <img src="assets\logo_devskill@2x.png"> 
+          <app-immagine-devskill></app-immagine-devskill>
           <br/>
           <br/>
           <br/>
           <br/>
-          <h6>Benvenuti</h6>
+          <app-messaggio></app-messaggio>
         </ion-col>
        </ion-row>
        <br/>
@@ -23,26 +23,25 @@
       <ion-row>
         <ion-col></ion-col>
         <ion-col>
-          <ion-item>
-            <ion-label for="usurname" position="stacked">Usurname</ion-label>
-            <ion-input [(ngModel)]="username" id="usurname" name="usurname"></ion-input>
-            <ion-icon slot="end" name="mail-outline"></ion-icon>
-          </ion-item>
-          <h6 style="margin-left: 3mm;">Inserisci usurname</h6>
-          <br/>
-          <ion-item>
-            <ion-label for="password" position="stacked">Password</ion-label>
-            <ion-input [(ngModel)]="password" type="password" id="passord" name="password"></ion-input>
-            <ion-icon slot="end" name="lock-closed-outline"></ion-icon>
-
-          </ion-item>
-          <h6 style="margin-left: 3mm;">Inserisci password</h6>
-          <br/>
-        
-
-          <div class="ion-float-right">
+          
+            <ion-item >
+              <ion-label for="username" position="stacked">Username</ion-label>
+              <ion-input [(ngModel)]="username" id="username" formControlName="username"></ion-input>
+              <ion-icon slot="end" name="mail-outline"></ion-icon>
+            </ion-item>
+            <br/>
+            <br/>
+            <ion-item>
+              <ion-label for="password" position="stacked">Password</ion-label>
+              <ion-input [(ngModel)]="password" type="password" id="password"  formControlName="password"></ion-input>
+              <ion-icon slot="end" name="lock-closed-outline"></ion-icon>
+            </ion-item>
+            
+          <div class="ion-float-right" style="padding-top: 5%;">
             <ion-button (click)="funzioneBott()" name="bottone" type="block" shape="round">Login</ion-button>
+            <app-bottone-personalizzato indirizzo="/registration" testo="Vai a registrazione"></app-bottone-personalizzato>
            </div>  
+           
         </ion-col>
         <ion-col></ion-col>
       </ion-row>

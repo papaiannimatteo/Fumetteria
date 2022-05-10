@@ -1,85 +1,36 @@
 <ion-header>
-  <ion-toolbar class="toolbar-container">
-    <ion-title>
-      Convertitore
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <div>
-    <ion-refresher slot="fixed" (ionRefresh)="doSomething($event)">
-      <ion-refresher-content pullingIcon="arrow-dropdown"
-      refreshingSpinner="circles" refreshingText="restarting...">
-    </ion-refresher-content>
-    </ion-refresher>
-  </div>
-
-
-  <body style="background-color: rgb(161, 168, 56);">
-  <ion-grid style="padding: 10%; width:80%;">
-
-    <ion-row class="riga1">
-
-      <!-- Sinistra -->
-      <ion-col>
-          <div class="ion-text-center">
-            <ion-label>Temperatura</ion-label>
-          </div>
-          <br/>
-
-        <ion-row>
-
-          <ion-col class="griglia">
-            <ion-label position="floating"> C </ion-label>
-            <ion-item>
-              <ion-input type="number" [(ngModel)]="c" (keyup)= "convertitore('c')"></ion-input>
-            </ion-item>
-          </ion-col>
-
-          <ion-col class="griglia">
-            <ion-label position="floating"> F </ion-label>
-            <ion-item>
-              <ion-input type="number" [(ngModel)]="f" (keyup)= "convertitore('f')"></ion-input>
-            </ion-item>
-          </ion-col>
-
-        </ion-row>
-      </ion-col>
-      <!-- Destra -->
-      <ion-col>
-        <div class="ion-text-center">
-          <ion-label>Distanza</ion-label>
-        </div>
-        <br/>
-
-      <ion-row>
-
-        <ion-col class="griglia">
-          <ion-label position="floating"> KM </ion-label>
-          <ion-item>
-            <ion-input type="number" [(ngModel)]="km" (keyup)= "convertitore('km')"></ion-input>
-          </ion-item>
+    <ion-toolbar class="toolbar-container">
+      <ion-title>
+        Convertitore
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-grid style="padding: 10%; width:80%;">
+  
+      <ion-row class="riga1">
+        <ion-col>
+          <h1>Temperatura</h1>
+          <ion-row>
+            <app-input-generico unita1="C" unita2="F"></app-input-generico>
+          </ion-row>
         </ion-col>
-
-        <ion-col  class="griglia">
-          <ion-label position="floating"> MI </ion-label>
-          <ion-item>
-            <ion-input type="number" [(ngModel)]="mi" (keyup)= "convertitore('mi')"></ion-input>
-          </ion-item>
-        </ion-col>
-
       </ion-row>
-    </ion-col>
 
-    </ion-row>
-    <div style="margin-left: 43.5%; padding-top: 20px;">
-    <ion-row>
-      <ion-button color="light">Restart</ion-button>
-    </ion-row>
-  </div>
-  </ion-grid>
-</body>
+      <ion-row class="riga1">
+        <ion-col>
+          <h1>DIstanza</h1>
+          <ion-row>
+            <app-input-generico unita1="KM" unita2="MI"></app-input-generico>
+          </ion-row>
+        </ion-col>
+      </ion-row>
 
-</ion-content>
-
+      <div style="margin-left: 43.5%; padding-top: 20px;">
+      <ion-row>
+        <ion-button color="light">Restart</ion-button>
+      </ion-row>
+    </div>
+    </ion-grid>
+  </ion-content>

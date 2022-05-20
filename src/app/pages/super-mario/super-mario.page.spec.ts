@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { InputComponent } from './input.component';
+import { SuperMarioPage } from './super-mario.page';
 
-describe('InputComponent', () => {
-  let component: InputComponent;
-  let fixture: ComponentFixture<InputComponent>;
+describe('SuperMarioPage', () => {
+  let component: SuperMarioPage;
+  let fixture: ComponentFixture<SuperMarioPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ InputComponent ],
+      declarations: [ SuperMarioPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(InputComponent);
+    fixture = TestBed.createComponent(SuperMarioPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

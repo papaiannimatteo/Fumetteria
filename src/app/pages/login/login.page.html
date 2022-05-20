@@ -1,5 +1,5 @@
 <ion-header>
-  <link rel="stylesheets" type="css" href="login.page.scss">
+  <link rel="stylesheets" type="css" href="login.page.scss" />
   <ion-toolbar>
     <ion-title></ion-title>
   </ion-toolbar>
@@ -7,64 +7,56 @@
 
 <ion-content>
   <form [formGroup]="myForm">
-    <ion-grid  class="set-grid">
+    <ion-grid class="set-grid">
       <ion-row>
         <ion-col class="ion-text-center">
           <app-immagine-devskill></app-immagine-devskill>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
+          <br />
+          <br />
+          <br />
+          <br />
           <app-messaggio></app-messaggio>
         </ion-col>
-       </ion-row>
-       <br/>
-       <br/>
+      </ion-row>
+      <br />
+      <br />
       <ion-row>
         <ion-col></ion-col>
         <ion-col>
-          
-            <ion-item >
-              <ion-label for="username" position="stacked">Username</ion-label>
-              <ion-input [(ngModel)]="username" id="username" formControlName="username"></ion-input>
-              <ion-icon slot="end" name="mail-outline"></ion-icon>
-            </ion-item>
-            <br/>
-            <br/>
-            <ion-item>
-              <ion-label for="password" position="stacked">Password</ion-label>
-              <ion-input [(ngModel)]="password" type="password" id="password"  formControlName="password"></ion-input>
-              <ion-icon slot="end" name="lock-closed-outline"></ion-icon>
-            </ion-item>
-            
-          <div class="ion-float-right" style="padding-top: 5%;">
-            <ion-button (click)="funzioneBott()" name="bottone" type="block" shape="round">Login</ion-button>
-            <app-bottone-personalizzato indirizzo="/registration" testo="Vai a registrazione"></app-bottone-personalizzato>
-           </div>  
-           
+          <ion-item>
+            <ion-label for="username" position="stacked">Username</ion-label>
+            <ion-input id="username" formControlName="username"></ion-input>
+            <ion-icon slot="end" name="mail-outline"></ion-icon>
+          </ion-item>
+          <br />
+          <br />
+          <ion-item>
+            <ion-label for="password" position="stacked">Password</ion-label>
+            <ion-input
+              type="password"
+              id="password"
+              formControlName="password"
+            ></ion-input>
+            <ion-icon slot="end" name="lock-closed-outline"></ion-icon>
+          </ion-item>
+
+          <div class="ion-float-right" style="padding-top: 5%">
+            <app-bottone-personalizzato
+              indirizzo="/registration"
+              testo="Non hai ancora un account? Registrati qui!"
+            ></app-bottone-personalizzato>
+            <ion-button
+              [disabled]="!myForm.valid"
+              (click)="funzioneBott()"
+              name="bottone"
+              type="block"
+              shape="round"
+              >Login</ion-button
+            >
+          </div>
         </ion-col>
         <ion-col></ion-col>
       </ion-row>
-      
-      
-
-
-
-
-
-
-
-
-
-
-
     </ion-grid>
   </form>
-
-  
-  
 </ion-content>
-
-
-
-

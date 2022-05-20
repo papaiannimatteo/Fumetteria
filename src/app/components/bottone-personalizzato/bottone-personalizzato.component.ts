@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BottonePersonalizzatoComponent implements OnInit {
   @Input() testo:string;
   @Input() indirizzo:string;
+
+ 
   
 
   constructor() { }

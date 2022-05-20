@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>superMario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="myForm">
+    <ion-grid class="set-grid">
+      <ion-row style="padding-top: 8%;">
+        <ion-col>
+          <ion-item>
+            <ion-label for="salti" position="floating">Walls to skip: </ion-label>
+            <ion-input [(ngModel)]="numeroMuri" id="salti" formControlName="salti"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label for="altezze" position="floating">Heights of the walls: </ion-label>
+            <ion-input [(ngModel)]="altezzeMuri" id="altezze" formControlName="altezze"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-top: 5%">
+        <ion-col></ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label for="risultato" position="floating">Jumps made by Mario: </ion-label>
+            <ion-input id="risultato" formControlName="risultato"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

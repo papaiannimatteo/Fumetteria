@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserDto } from 'src/app/model/package/dto/user-dto';
+import { LoginServiceService } from './login-service.service';
 
 @Component({
   selector: 'app-login',
@@ -8,26 +9,27 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  username:string="";
-  password:string="";
-  funzioneBott() {
-    alert("Ciao "+this.username + " hai inserito questa password: "+this.password);
-}
-
+  
   myForm: FormGroup;
   
-
-
-
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder, private Login: LoginServiceService) { 
     
   }
 
+  funzioneBott() {
+    this.Login.login(this.myForm.get('username').value, this.myForm.get("password").value).subscribe(response => {
+      const user: UserDto = response;
+      console.log(user);
+    })
+   
+     alert("Ciao "+this.myForm.controls["username"].value + " hai inserito questa password: "+this.myForm.controls["password"].value);
+ }
+
   ngOnInit() {
     this.myForm = this.fb.group({
-      username: ["Inserisci username qui"],
+      username: ['', [Validators.email, Validators.required]],
 
-      password: ["Inserisci password qui"],
+      password: ['', [Validators.pattern, Validators.required, Validators.minLength(4)]],
 
 
     })

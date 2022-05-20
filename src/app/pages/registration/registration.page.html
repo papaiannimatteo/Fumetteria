@@ -7,51 +7,64 @@
 
 <ion-content>
   <form [formGroup]="myForm">
-      <ion-grid>
-        <ion-row>
-          <ion-col class="ion-text-center">
-            <app-immagine-devskill></app-immagine-devskill>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <app-messaggio></app-messaggio>
-          </ion-col>
-         </ion-row>
-        <ion-row>
-          <ion-col></ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label for="name" position="stacked">Name</ion-label>
-              <ion-input id="name" formControlName="name"></ion-input>
-            </ion-item>
-            <h6 class="h6">Insert name</h6>
-            <br/>
-            <ion-item>
-              <ion-label for="surname" position="stacked">Surname</ion-label>
-              <ion-input id="surname" formControlName="surname"></ion-input>
-            </ion-item>
-            <h6 class="h6">Insert surname</h6>
-            <br/>
-            <ion-item>
-              <ion-label for="email" position="stacked">E-mail</ion-label>
-              <ion-input id="email" formControlName="email"></ion-input>
-            </ion-item>
-            <h6 class="h6">Insert E-mail account</h6>
-            <br/>
-            <ion-item>
-              <ion-label for="password" position="stacked">Password</ion-label>
-              <ion-input type="password" id="password" formControlName="password"></ion-input>
-            </ion-item>  
-            <h6 class="h6">Insert password</h6> 
-            <div class="ion-float-right">
-              <ion-button type="block" shape="round">Sign in</ion-button>
-              <app-bottone-personalizzato indirizzo="/login" testo="Vai a login"></app-bottone-personalizzato>
-             </div>
-
-          </ion-col>
-          <ion-col></ion-col>
-        </ion-row>
-      </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <app-immagine-devskill></app-immagine-devskill>
+          <br />
+          <br />
+          <br />
+          <br />
+          <app-messaggio></app-messaggio>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label for="username" position="stacked">Username</ion-label>
+            <ion-input id="username" formControlName="username"></ion-input>
+          </ion-item>
+          <h6 class="h6">Insert Username</h6>
+          <br />
+          <ion-item>
+            <ion-label for="email" position="stacked">E-mail</ion-label>
+            <ion-input id="email" formControlName="email"></ion-input>
+          </ion-item>
+          <h6 class="h6">Insert E-mail account</h6>
+          <br />
+          <ion-item>
+            <ion-label for="password" position="stacked">Password</ion-label>
+            <ion-input
+              type="password"
+              id="password"
+              formControlName="password"
+            ></ion-input>
+          </ion-item>
+          <h6 class="h6">Insert password</h6>
+          <br />
+          <ion-item>
+            <ion-label for="cPassword" position="stacked"
+              >Conferma password</ion-label
+            >
+            <ion-input
+              type="password"
+              id="cPassword"
+              name="cPassword"
+            ></ion-input>
+          </ion-item>
+          <h6 class="h6">Insert password</h6>
+          <div class="ion-float-right">
+            <app-bottone-personalizzato
+            indirizzo="/login"
+            testo="Hai già un account? Effettua il login!"
+          ></app-bottone-personalizzato>
+            <ion-button type="block" shape="round">Sign in</ion-button>
+          
+          </div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
   </form>
 </ion-content>
